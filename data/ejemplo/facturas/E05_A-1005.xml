@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CFDI DE EJEMPLO FICTICIO - SIN VALIDEZ FISCAL - SOLO PARA DEMO -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Serie="A" Folio="1005" Fecha="2026-10-01T10:30:00" FormaPago="99" CondicionesDePago="Neto 30 dias" SubTotal="6500.00" Moneda="MXN" Total="7540.00" TipoDeComprobante="I" Exportacion="01" MetodoPago="PPD" LugarExpedicion="76000">
+  <cfdi:Emisor Rfc="TGA190214QX5" Nombre="TALLER GRAFICO ALTAMIRA SA DE CV" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="CDS160707JK7" Nombre="CLINICA DENTAL SONRISA PLENA SC" DomicilioFiscalReceptor="76000" RegimenFiscalReceptor="601" UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="82121500" Cantidad="1" ClaveUnidad="E48" Descripcion="Tarjetas de presentacion y recetarios" ValorUnitario="6500.00" Importe="6500.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="6500.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="1040.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="1040.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="6500.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="1040.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="989D1029-9A14-5B7C-999F-8BCE2EC8A9B4" FechaTimbrado="2026-10-01T10:31:00" RfcProvCertif="AAA010101AAA" SelloCFD="DEMO" NoCertificadoSAT="00000000000000000000" SelloSAT="DEMO"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

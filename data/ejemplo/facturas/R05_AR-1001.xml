@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CFDI DE EJEMPLO FICTICIO - SIN VALIDEZ FISCAL - SOLO PARA DEMO -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Serie="AR" Folio="1001" Fecha="2026-10-01T10:30:00" FormaPago="03" CondicionesDePago="Contado" SubTotal="14000.00" Moneda="MXN" Total="16240.00" TipoDeComprobante="I" Exportacion="01" MetodoPago="PUE" LugarExpedicion="76000">
+  <cfdi:Emisor Rfc="APN090610QR1" Nombre="ARRENDADORA PLAZA NORTE SA DE CV" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="TGA190214QX5" Nombre="TALLER GRAFICO ALTAMIRA SA DE CV" DomicilioFiscalReceptor="76000" RegimenFiscalReceptor="601" UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="80131500" Cantidad="1" ClaveUnidad="E48" Descripcion="Renta de local comercial octubre 2026" ValorUnitario="14000.00" Importe="14000.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="14000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2240.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="2240.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="14000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="2240.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="7E9ECB01-040C-5DF9-8473-F9E0E74D7BC5" FechaTimbrado="2026-10-01T10:31:00" RfcProvCertif="AAA010101AAA" SelloCFD="DEMO" NoCertificadoSAT="00000000000000000000" SelloSAT="DEMO"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

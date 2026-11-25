@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CFDI DE EJEMPLO FICTICIO - SIN VALIDEZ FISCAL - SOLO PARA DEMO -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Serie="A" Folio="1009" Fecha="2026-11-12T10:30:00" FormaPago="99" CondicionesDePago="Neto 30 dias" SubTotal="9000.00" Moneda="MXN" Total="10440.00" TipoDeComprobante="I" Exportacion="01" MetodoPago="PPD" LugarExpedicion="76000">
+  <cfdi:Emisor Rfc="TGA190214QX5" Nombre="TALLER GRAFICO ALTAMIRA SA DE CV" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="RSN170811CD4" Nombre="RESTAURANTES SABOR NORTENO SA DE CV" DomicilioFiscalReceptor="76000" RegimenFiscalReceptor="601" UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="82121500" Cantidad="1" ClaveUnidad="E48" Descripcion="Volantes promocionales" ValorUnitario="9000.00" Importe="9000.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="9000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="1440.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="1440.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="9000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="1440.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="9631EB65-0414-521F-A6C9-A0B466808484" FechaTimbrado="2026-11-12T10:31:00" RfcProvCertif="AAA010101AAA" SelloCFD="DEMO" NoCertificadoSAT="00000000000000000000" SelloSAT="DEMO"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

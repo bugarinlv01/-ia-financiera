@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- CFDI DE EJEMPLO FICTICIO - SIN VALIDEZ FISCAL - SOLO PARA DEMO -->
+<cfdi:Comprobante xmlns:cfdi="http://www.sat.gob.mx/cfd/4" xmlns:tfd="http://www.sat.gob.mx/TimbreFiscalDigital" Version="4.0" Serie="A" Folio="1007" Fecha="2026-10-13T10:30:00" FormaPago="99" CondicionesDePago="Neto 15 dias" SubTotal="22000.00" Moneda="MXN" Total="25520.00" TipoDeComprobante="I" Exportacion="01" MetodoPago="PPD" LugarExpedicion="76000">
+  <cfdi:Emisor Rfc="TGA190214QX5" Nombre="TALLER GRAFICO ALTAMIRA SA DE CV" RegimenFiscal="601"/>
+  <cfdi:Receptor Rfc="HRV150520AB3" Nombre="HOTEL REAL DEL VALLE SA DE CV" DomicilioFiscalReceptor="76000" RegimenFiscalReceptor="601" UsoCFDI="G03"/>
+  <cfdi:Conceptos>
+    <cfdi:Concepto ClaveProdServ="55121700" Cantidad="1" ClaveUnidad="E48" Descripcion="Senaletica interior para habitaciones" ValorUnitario="22000.00" Importe="22000.00" ObjetoImp="02">
+      <cfdi:Impuestos>
+        <cfdi:Traslados>
+          <cfdi:Traslado Base="22000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="3520.00"/>
+        </cfdi:Traslados>
+      </cfdi:Impuestos>
+    </cfdi:Concepto>
+  </cfdi:Conceptos>
+  <cfdi:Impuestos TotalImpuestosTrasladados="3520.00">
+    <cfdi:Traslados>
+      <cfdi:Traslado Base="22000.00" Impuesto="002" TipoFactor="Tasa" TasaOCuota="0.160000" Importe="3520.00"/>
+    </cfdi:Traslados>
+  </cfdi:Impuestos>
+  <cfdi:Complemento>
+    <tfd:TimbreFiscalDigital Version="1.1" UUID="7AFF2714-793F-5D73-9F4F-9E38074ACA75" FechaTimbrado="2026-10-13T10:31:00" RfcProvCertif="AAA010101AAA" SelloCFD="DEMO" NoCertificadoSAT="00000000000000000000" SelloSAT="DEMO"/>
+  </cfdi:Complemento>
+</cfdi:Comprobante>

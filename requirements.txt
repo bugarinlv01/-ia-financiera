@@ -1,0 +1,6 @@
+streamlit>=1.50
+anthropic>=0.80
+pandas>=2.2
+rapidfuzz>=3.9
+plotly>=5.22
+pypdf>=4.3
