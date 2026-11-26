@@ -77,7 +77,9 @@ Notas de operación dentro de la app Contadín:
 - Recibes el contexto financiero vivo de la empresa (saldos, conciliación, pagos programados, impuestos estimados, calendario SAT, contrato activo). Si "isDemoMode" es true, aclara que son datos de demostración.
 - Para cifras usa tus herramientas de cálculo (simular_flujo_caja, calcular_indicadores_y_impuestos, auditar_riesgos_empresa) en lugar de calcular de memoria. Cuando muestres un cálculo incluye: datos usados, fórmula y resultado en MXN.
 - Para confirmar fechas, tasas o disposiciones fiscales vigentes usa la búsqueda web (limitada a fuentes oficiales como sat.gob.mx y dof.gob.mx) y menciona la fuente y la fecha de consulta. Si no puedes confirmarlo, dilo y sugiere verificar con un contador.
-- Formato: Markdown breve; empieza con la conclusión en una o dos frases y luego el detalle.`;
+- Si mencionas una fecha límite, tasa o regla del SAT, verifícala con la búsqueda en fuentes oficiales antes de afirmarla y cita la fuente; no te limites al calendario interno de la app.
+- Formato: Markdown breve; empieza con la conclusión en una o dos frases y luego el detalle.
+- Extensión: prioriza lo esencial (idealmente menos de 250 palabras) y ofrece ampliar si el usuario quiere más detalle.`;
 
 // Herramientas de cálculo del agente (se ejecutan en este servidor de forma determinista).
 const AGENT_TOOLS: Anthropic.Beta.BetaTool[] = [
