@@ -2,6 +2,7 @@
 from __future__ import annotations
 
 import hashlib
+import os
 from datetime import date, datetime
 
 import pandas as pd
@@ -42,14 +43,14 @@ ss.setdefault("chat", [])
 ss.setdefault("analisis_contrato", {})
 
 
-def api_key() -> str | None:
+def api_key_secrets() -> str | None:
     try:
         return st.secrets["ANTHROPIC_API_KEY"]
-    except (KeyError, FileNotFoundError, Exception):
-        return None
+    except Exception:  # sin secrets.toml o sin la clave
+        return os.environ.get("ANTHROPIC_API_KEY")
 
 
-cliente = llm.crear_cliente(api_key())
+KEY_SECRETS = api_key_secrets()
 
 # ------------------------------------------------------------------ Barra lateral: datos
 with st.sidebar:
@@ -72,11 +73,17 @@ with st.sidebar:
     ventas_est = st.toggle("Incluir ventas futuras estimadas", value=True,
                            help="Agrega cobros semanales con base en el promedio histórico (confianza baja) a partir del día 35.")
     st.divider()
+    key_sesion = None
+    if not KEY_SECRETS:
+        key_sesion = st.text_input("API key de Anthropic", type="password", placeholder="sk-ant-...",
+                                   help="Solo se usa en esta sesión del navegador; no se guarda. "
+                                        "También puedes configurarla en los Secrets de la app.").strip() or None
+    cliente = llm.crear_cliente(KEY_SECRETS or key_sesion)
     if cliente:
-        st.success("Claude conectado", icon="✅")
+        st.success("API key cargada (se valida al usar el chat)", icon="✅")
     else:
         st.warning("Sin API key de Anthropic: el chat y el análisis con IA están desactivados. "
-                   "Agrega ANTHROPIC_API_KEY en .streamlit/secrets.toml.", icon="🔑")
+                   "Pégala arriba o agrega ANTHROPIC_API_KEY en los Secrets.", icon="🔑")
 
 
 @st.cache_data(show_spinner=False)

@@ -24,7 +24,8 @@ cp .streamlit/secrets.toml.example .streamlit/secrets.toml   # y pon tu ANTHROPI
 streamlit run app.py
 ```
 
-Sin API key la app funciona con todo excepto el chat y el análisis de contratos con IA.
+Sin API key la app funciona con todo excepto el chat y el análisis de contratos con IA. Si no hay key en Secrets,
+la barra lateral permite pegarla solo para la sesión actual (útil en iPad, donde el editor de Secrets cambia las comillas).
 
 ## Datos de ejemplo (ficticios)
 
