@@ -1,4 +1,13 @@
-# IA Financiera · Fina 💼
+# IA Financiera 💼
+
+Este repositorio tiene dos versiones del prototipo:
+
+- **`contadin/`** — **Contadín** (React + Claude), la versión principal con el diseño del equipo. Ver `contadin/README.md`.
+- **Raíz (`app.py`)** — prototipo inicial en Streamlit con el asistente "Fina" (descrito abajo).
+
+---
+
+## Prototipo en Streamlit · Fina
 
 Prototipo web (Python + Streamlit) de **Fina**, un copiloto financiero con IA para pymes en México.
 
