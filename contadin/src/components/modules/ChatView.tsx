@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import { ArrowLeft, ExternalLink, RotateCcw, Send } from "lucide-react";
 import { ChatMessage, ChatSource } from "../../types/finance";
 import { ContadinMascot } from "../MascotAvatar";
+import { Markdown } from "../Markdown";
 
 interface ChatViewProps {
   messages: ChatMessage[];
@@ -181,7 +182,11 @@ export function ChatView({
                       : "bg-slate-50 border border-slate-200 text-slate-800"
                   }`}
                 >
-                  <div className="whitespace-pre-wrap">{msg.content}</div>
+                  {isUser ? (
+                    <div className="whitespace-pre-wrap">{msg.content}</div>
+                  ) : (
+                    <Markdown>{msg.content}</Markdown>
+                  )}
 
                   {!isUser && safeSources.length > 0 && (
                     <div className="mt-3 pt-2.5 border-t border-slate-200/80 space-y-1.5">

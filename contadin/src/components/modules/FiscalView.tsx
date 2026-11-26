@@ -14,6 +14,7 @@ import {
 } from "../../types/finance";
 import { formatMXN, formatShortDate } from "../../utils/financeEngine";
 import { ContadinMascot } from "../MascotAvatar";
+import { Markdown } from "../Markdown";
 
 interface FiscalViewProps {
   company: CompanyProfile;
@@ -375,8 +376,8 @@ export function FiscalView({
                 <span className="font-mono-nums">Fecha de referencia: {refDate}</span>
               )}
             </div>
-            <div className="text-sm text-slate-800 whitespace-pre-wrap leading-relaxed">
-              {answer}
+            <div className="text-sm text-slate-800 leading-relaxed">
+              <Markdown>{answer}</Markdown>
             </div>
             {sources.filter((s) => /^https?:\/\//i.test(s.uri)).length > 0 && (
               <div className="pt-3 border-t border-slate-200">

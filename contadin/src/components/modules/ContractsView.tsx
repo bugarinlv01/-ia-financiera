@@ -10,6 +10,7 @@ import {
 } from "lucide-react";
 import { ContractAnalysis } from "../../types/finance";
 import { ContadinMascot } from "../MascotAvatar";
+import { Markdown } from "../Markdown";
 
 interface ContractsViewProps {
   contracts: ContractAnalysis[];
@@ -407,8 +408,8 @@ export function ContractsView({
             )}
 
             {qaAnswer && (
-              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800 whitespace-pre-wrap leading-relaxed">
-                {qaAnswer}
+              <div className="rounded-lg border border-slate-200 bg-slate-50 p-4 text-sm text-slate-800 leading-relaxed">
+                <Markdown>{qaAnswer}</Markdown>
               </div>
             )}
           </div>
